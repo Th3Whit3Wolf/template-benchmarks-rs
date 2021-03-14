@@ -87,6 +87,8 @@ fn main() {
                             };
                             let md_name = if let Some(homepage) = crate_info.homepage {
                                 format!("- [{}{}]({})", crate_info.name, vers, homepage)
+                            } else if let Some(repo) = crate_info.repository {
+                                format!("- [{}{}]({})", crate_info.name, vers, repo)
                             } else {
                                 format!("- {}", crate_info.name)
                             };
