@@ -5,26 +5,43 @@ authors = ["Dirkjan Ochtman <dirkjan@ochtman.nl>"]
 build = "src/build.rs"
 edition = "2018"
 
+[features]
+default = []
+make_md = []
+
 [dependencies]
-askama = { git = "https://github.com/djc/askama", branch = "main" }
+askama = "0.10.5"
 criterion = "0.3"
-handlebars = { git = "https://github.com/sunng87/handlebars-rust" }
-horrorshow = { git = "https://github.com/Stebalien/horrorshow-rs" }
-liquid = { git = "https://github.com/cobalt-org/liquid-rust" }
-markup = { git = "https://github.com/utkarshkukreti/markup.rs" }
-sailfish = { git = "https://github.com/Kogia-sima/sailfish" }
-sailfish-macros = { git = "https://github.com/Kogia-sima/sailfish" }
+handlebars = "3.5.3"
+horrorshow = "0.8.3"
+liquid = "0.22.0"
+markup = "0.11.0"
+sailfish = "0.3.1"
+sailfish-macros = "0.3.1"
 serde = "1"
 serde_derive = "1"
 serde_json = "1"
 serde_yaml = "0.8"
-tera = { git = "https://github.com/Keats/tera" }
-fomat-macros = { git = "https://github.com/krdln/fomat-macros" }
-maud = { git = "https://github.com/lambda-fairy/maud" }
+tera = "1.6.1"
+fomat-macros = "0.3.1"
+maud = "0.22.2"
+ramhorns = "0.10.2"
 
 [build-dependencies]
-ructe = { git = "https://github.com/kaj/ructe" }
+ructe = "0.13.0"
+cargo_toml = "0.8.1"
+crates_io_api = "0.7.0"
 
 [[bench]]
 name = "all"
 harness = false
+
+[profile.bench]
+opt-level = 3
+debug = false
+debug-assertions = false
+overflow-checks = false
+lto = true
+incremental = false
+codegen-units = 1
+rpath = false
