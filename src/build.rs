@@ -55,10 +55,11 @@ fn main() {
                     m.push_str(&format!("- [write!(v{})](https://doc.rust-lang.org/std/macro.write.html): the std library `write!` macro", r_vers));
                 } else {
                     m.push_str(&format!("- [write!](https://doc.rust-lang.org/std/macro.write.html): the std library `write!` macro"));
-                }
+                } 
+            } else {
                 m.push_str(&format!("- [write!](https://doc.rust-lang.org/std/macro.write.html): the std library `write!` macro"));
             }
-
+            
             let mut deps: BTreeMap<String, Dependency> = manifest.dependencies;
             for (name, kind) in manifest.build_dependencies {
                 deps.insert(name, kind);
