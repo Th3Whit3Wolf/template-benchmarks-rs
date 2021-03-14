@@ -52,14 +52,14 @@ fn main() {
             let mut m: String = HEADER_MD.to_string();
             if let Some(rustc_vers) = get_version_and_date() {
                 if let Some(r_vers) = rustc_vers.0 {
-                    m.push_str(&format!("- [write!(v{})](https://doc.rust-lang.org/std/macro.write.html): the std library `write!` macro", r_vers));
+                    m.push_str(&format!("- [write!(v{})](https://doc.rust-lang.org/std/macro.write.html): the std library `write!` macro\n", r_vers));
                 } else {
-                    m.push_str(&format!("- [write!](https://doc.rust-lang.org/std/macro.write.html): the std library `write!` macro"));
+                    m.push_str(&format!("- [write!](https://doc.rust-lang.org/std/macro.write.html): the std library `write!` macro\n"));
                 } 
             } else {
-                m.push_str(&format!("- [write!](https://doc.rust-lang.org/std/macro.write.html): the std library `write!` macro"));
+                m.push_str(&format!("- [write!](https://doc.rust-lang.org/std/macro.write.html): the std library `write!` macro\n"));
             }
-            
+
             let mut deps: BTreeMap<String, Dependency> = manifest.dependencies;
             for (name, kind) in manifest.build_dependencies {
                 deps.insert(name, kind);
