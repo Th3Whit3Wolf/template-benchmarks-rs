@@ -106,6 +106,8 @@ main() {
         ech "Plots will be rendered if \`gnuplot\` is installed and will be available in the \`target/criterion\` folder."
         ech
         mv new_README.md README.md
+        mv target/criterion/Teams/report/violin.svg teams.svg
+        mv target/criterion/Big\ table/report/violin.svg big-table.svg
     else
         echo "Failed to update README"
         exit 1
