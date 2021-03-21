@@ -1,9 +1,15 @@
 name: Update README
 
-on: push
+on:
+  push:
+  pull_request:
+  schedule:
+    # Every Monday at 1PM UTC (9AM EST)
+    - cron: '0 13 * * 1' 
+  workflow_dispatch:
 
 jobs:
-  check:
+  update_readme:
     name: Update README
     runs-on: ubuntu-latest
     steps:
