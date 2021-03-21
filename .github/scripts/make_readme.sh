@@ -4,7 +4,7 @@ ech() {
     echo "${1}" >> new_README.md
 }
 
-as_millisecs() {
+as_nanosecs() {
     local avg=$(cat "${1}"/report/index.html | grep "<td>Mean</td>" -A 3 | tail -n 3 | cut -d ">" -f2 | cut -d "<" -f1 | head -n2 | tail -n1)
     local num=$(echo ${avg} | cut -d ' ' -f1)
     local units=$(echo ${avg} | cut -d ' ' -f2)
@@ -34,12 +34,11 @@ mkRow() {
 
 sort() {
     local arr=("$@")
-    #echo ${arr[*]}
 
     for ((i=0; i <= $((${#arr[@]} - 2)); ++i)); do
         for ((j=((i + 1)); j <= ((${#arr[@]} - 1)); ++j)); do
-            first_val="$(as_millisecs ${arr[i]})"
-            secnd_val="$(as_millisecs ${arr[j]})"
+            first_val="$(as_nanosecs ${arr[i]})"
+            secnd_val="$(as_nanosecs ${arr[j]})"
             #echo $first_val
             #echo $secnd_val
             if [[ ${first_val} -gt ${secnd_val} ]]; then
@@ -50,7 +49,6 @@ sort() {
             fi
         done
     done
-    #echo "${arr[*]}"
     return "${arr[@]}"
 }
 
@@ -85,8 +83,8 @@ main() {
         done
         for ((i=0; i <= $((${#Teams[@]} - 2)); ++i)); do
             for ((j=((i + 1)); j <= ((${#Teams[@]} - 1)); ++j)); do
-                first_val=$(as_millisecs "${Teams[i]}")
-                secnd_val=$(as_millisecs "${Teams[j]}")
+                first_val=$(as_nanosecs "${Teams[i]}")
+                secnd_val=$(as_nanosecs "${Teams[j]}")
                 if [[ ${first_val} -gt ${secnd_val} ]]; then
                     tmp=${Teams[i]}
                     Teams[i]=${Teams[j]}
@@ -97,8 +95,8 @@ main() {
 
         for ((i=0; i <= $((${#BigTable[@]} - 2)); ++i)); do
             for ((j=((i + 1)); j <= ((${#BigTable[@]} - 1)); ++j)); do
-                first_val=$(as_millisecs "${BigTable[i]}")
-                secnd_val=$(as_millisecs "${BigTable[j]}")
+                first_val=$(as_nanosecs "${BigTable[i]}")
+                secnd_val=$(as_nanosecs "${BigTable[j]}")
                 if [[ ${first_val} -gt ${secnd_val} ]]; then
                     tmp=${BigTable[i]}
                     BigTable[i]=${BigTable[j]}
