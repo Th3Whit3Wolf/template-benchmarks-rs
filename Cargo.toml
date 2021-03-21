@@ -35,3 +35,7 @@ chrono = "0.4.19"
 [[bench]]
 name = "all"
 harness = false
+
+[profile.bench]
+lto = true
+codegen-units = 1
