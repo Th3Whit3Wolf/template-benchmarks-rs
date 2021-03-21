@@ -28,8 +28,8 @@ maud = { git = "https://github.com/lambda-fairy/maud" }
 
 [build-dependencies]
 ructe = { git = "https://github.com/kaj/ructe" }
-cargo_toml = { git = "https://github.com/Th3Whit3Wolf/crates_io_api" }
-crates_io_api = { path = "../crates_io_api" }
+cargo_toml = "0.8.1"
+crates_io_api = { git = "https://github.com/Th3Whit3Wolf/crates_io_api" }
 chrono = "0.4.19"
 
 [[bench]]
