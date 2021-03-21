@@ -5,6 +5,10 @@ authors = ["Dirkjan Ochtman <dirkjan@ochtman.nl>"]
 build = "src/build.rs"
 edition = "2018"
 
+[features]
+default = []
+make_md = []
+
 [dependencies]
 askama = { git = "https://github.com/djc/askama", branch = "main" }
 criterion = "0.3"
@@ -24,6 +28,9 @@ maud = { git = "https://github.com/lambda-fairy/maud" }
 
 [build-dependencies]
 ructe = { git = "https://github.com/kaj/ructe" }
+cargo_toml = { git = "https://github.com/Th3Whit3Wolf/crates_io_api" }
+crates_io_api = { path = "../crates_io_api" }
+chrono = "0.4.19"
 
 [[bench]]
 name = "all"
