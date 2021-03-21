@@ -32,33 +32,33 @@ Numbers, as output by Criterion:
 
 | Library | Lower bound | Estimate | Upper bound |
 | ------- | ----------: | -------: | ----------: |
-| Sailfish | 52.638 us | 52.652 us | 52.668 us |
-| Markup | 136.88 us | 137.05 us | 137.25 us |
-| fomat | 367.84 us | 368.82 us | 370.11 us |
-| Maud | 394.76 us | 394.95 us | 395.13 us |
-| Horrorshow | 430.47 us | 430.63 us | 430.81 us |
-| write | 470.28 us | 470.36 us | 470.44 us |
-| Ructe | 596.67 us | 596.75 us | 596.86 us |
-| Askama | 711.90 us | 712.18 us | 712.41 us |
-| Tera | 2.4963 ms | 2.4972 ms | 2.4982 ms |
-| Handlebars | 6.0112 ms | 6.0136 ms | 6.0165 ms |
-| Liquid | 19.334 ms | 19.342 ms | 19.351 ms |
+| Sailfish | 49.827 us | 50.017 us | 50.196 us |
+| Markup | 92.503 us | 93.098 us | 93.651 us |
+| fomat | 319.38 us | 320.58 us | 321.70 us |
+| Maud | 330.54 us | 333.05 us | 335.39 us |
+| Horrorshow | 370.61 us | 373.35 us | 376.13 us |
+| Ructe | 425.96 us | 428.45 us | 430.74 us |
+| write | 460.24 us | 462.24 us | 464.08 us |
+| Askama | 627.24 us | 630.07 us | 632.74 us |
+| Tera | 2.2368 ms | 2.2472 ms | 2.2572 ms |
+| Handlebars | 4.8676 ms | 4.9052 ms | 4.9408 ms |
+| Liquid | 16.166 ms | 16.271 ms | 16.372 ms |
  
 ### Teams
 
 | Library | Lower bound | Estimate | Upper bound |
 | ------- | ----------: | -------: | ----------: |
-| Sailfish | 97.989 ns | 98.343 ns | 98.956 ns |
-| Markup | 211.71 ns | 211.85 ns | 211.99 ns |
-| Maud | 417.72 ns | 418.11 ns | 418.50 ns |
-| fomat | 552.89 ns | 552.95 ns | 553.02 ns |
-| Horrorshow | 649.93 ns | 650.18 ns | 650.43 ns |
-| write | 802.92 ns | 803.15 ns | 803.38 ns |
-| Askama | 1.0066 us | 1.0071 us | 1.0075 us |
-| Ructe | 1.0927 us | 1.0933 us | 1.0938 us |
-| Tera | 6.3124 us | 6.3263 us | 6.3450 us |
-| Handlebars | 6.7217 us | 6.7556 us | 6.7893 us |
-| Liquid | 14.595 us | 14.622 us | 14.649 us |
+| Sailfish | 77.265 ns | 77.481 ns | 77.685 ns |
+| Markup | 149.19 ns | 150.76 ns | 152.30 ns |
+| Maud | 317.54 ns | 319.64 ns | 321.64 ns |
+| fomat | 498.64 ns | 500.62 ns | 502.41 ns |
+| Horrorshow | 634.71 ns | 640.03 ns | 646.39 ns |
+| write | 735.24 ns | 741.24 ns | 747.30 ns |
+| Ructe | 861.10 ns | 866.71 ns | 871.81 ns |
+| Askama | 884.70 ns | 888.52 ns | 892.22 ns |
+| Handlebars | 5.7511 us | 5.7881 us | 5.8238 us |
+| Tera | 5.8485 us | 5.8816 us | 5.9125 us |
+| Liquid | 12.778 us | 12.818 us | 12.857 us |
  
 ## Running the benchmarks
 
