@@ -8,7 +8,7 @@ as_nanosecs() {
     local avg=$(cat "${1}"/report/index.html | grep "<td>Mean</td>" -A 3 | tail -n 3 | cut -d ">" -f2 | cut -d "<" -f1 | head -n2 | tail -n1)
     local num=$(echo ${avg} | cut -d ' ' -f1)
     local units=$(echo ${avg} | cut -d ' ' -f2)
-    #echo $avg
+
     if [ "${units}" == "ms" ]; then
         val=$(printf "%.0f" "$(echo "${num} * 1000000" | bc)")
         echo $val
@@ -23,33 +23,16 @@ as_nanosecs() {
 }
 
 mkRow() {
-    local file_path=$1
+    local max_perf=$1
+    local file_path=$2
     local lib=$(basename "${file_path}")
     local perf=$(cat "${file_path}"/report/index.html | grep "<td>Mean</td>" -A 3 | tail -n 3 | cut -d ">" -f2 | cut -d "<" -f1)
     local min=$(echo ${perf} | cut -d ' ' -f1-2 )
     local avg=$(echo ${perf} | cut -d ' ' -f3-4 )
     local max=$(echo ${perf} | cut -d ' ' -f5-6 )
-    ech "| ${lib} | ${min} | ${avg} | ${max} |"
-}
-
-sort() {
-    local arr=("$@")
-
-    for ((i=0; i <= $((${#arr[@]} - 2)); ++i)); do
-        for ((j=((i + 1)); j <= ((${#arr[@]} - 1)); ++j)); do
-            first_val="$(as_nanosecs ${arr[i]})"
-            secnd_val="$(as_nanosecs ${arr[j]})"
-            #echo $first_val
-            #echo $secnd_val
-            if [[ ${first_val} -gt ${secnd_val} ]]; then
-                # echo $i $j ${arr[i]} ${arr[j]}
-                tmp=${arr[i]}
-                arr[i]=${arr[j]}
-                arr[j]=$tmp         
-            fi
-        done
-    done
-    return "${arr[@]}"
+    local avg_as_nanosecs=$(as_nanosecs "${file_path}")
+    local rel_perf=$(printf "%.2f" "$(echo "scale=6; ${max_perf}/${avg_as_nanosecs}*100" | bc)")
+    ech "| ${lib} | ${min} | ${avg} | ${max} | ${rel_perf}% |"
 }
 
 mkTable() {
@@ -59,10 +42,12 @@ mkTable() {
    
     ech "### ${title}"
     ech
-    ech "| Library | Lower bound | Estimate | Upper bound |"
-    ech "| ------- | ----------: | -------: | ----------: |"
+    ech "| Library | Lower bound | Estimate | Upper bound | Relative Performance |"
+    ech "| ------- | ----------: | -------: | ----------: | :------------------- |"
+
+    max_perf=$(as_nanosecs "${arr[0]}")
     for i in "${arr[@]}"; do
-        mkRow "$i"
+        mkRow "$max_perf" "$i"
     done
     ech " "
 }
@@ -75,12 +60,16 @@ main() {
         shopt -u nullglob # Turn off nullglob to make sure it doesn't interfere with anything later
         BigTable=()
         Teams=()
+
+        # Remove report dir from both arrays
         for value in "${bt[@]}"; do
             [[ "${value}" != "target/criterion/Big table/report" ]] && BigTable+=("${value}")
         done
         for value in "${tm[@]}"; do
             [[ $value != "target/criterion/Teams/report" ]] && Teams+=($value)
         done
+
+        # Sort both arrays
         for ((i=0; i <= $((${#Teams[@]} - 2)); ++i)); do
             for ((j=((i + 1)); j <= ((${#Teams[@]} - 1)); ++j)); do
                 first_val=$(as_nanosecs "${Teams[i]}")
@@ -92,7 +81,6 @@ main() {
                 fi
             done
         done
-
         for ((i=0; i <= $((${#BigTable[@]} - 2)); ++i)); do
             for ((j=((i + 1)); j <= ((${#BigTable[@]} - 1)); ++j)); do
                 first_val=$(as_nanosecs "${BigTable[i]}")
@@ -105,6 +93,7 @@ main() {
             done
         done
         
+        # Turn array into markdown table
         mkTable "Big Table" "${BigTable[@]}"
         mkTable "Teams" "${Teams[@]}"
 
@@ -116,7 +105,6 @@ main() {
         ech
         ech "Plots will be rendered if \`gnuplot\` is installed and will be available in the \`target/criterion\` folder."
         ech
-        ech "##### Last ran on $(date +"%d %B %Y")"
         mv new_README.md README.md
     else
         echo "Failed to update README"
