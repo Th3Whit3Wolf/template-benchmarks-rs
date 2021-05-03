@@ -5,20 +5,20 @@ download ratings from [crates.io](https://crates.io/categories/template-engine).
 
 | Rank | Library | Description | Recent Downloads | Last Updated |
 | :--- | :-----: | :---------- | ---------------: | :----------: |
-| 2 | [handlebars](https://github.com/sunng87/handlebars-rust) | Handlebars templating implemented in Rust. | 498,240 | 28 March 2021 |
-| 3 | [tera](https://tera.netlify.com/) | Template engine based on Jinja2/Django templates | 265,984 | 21 April 2021 |
-| 4 | [askama](https://github.com/djc/askama) | Type-safe, compiled Jinja-like templates for Rust | 98,418 | 17 November 2020 |
-| 5 | [liquid](https://github.com/cobalt-org/liquid-rust) | The liquid templating language for Rust | 48,689 | 27 February 2021 |
-| 11 | [maud](https://maud.lambda.xyz/) | Compile-time HTML templates. | 12,946 | 09 January 2021 |
-| 14 | [ructe](https://github.com/kaj/ructe) | Rust Compiled Templates, efficient type-safe web page templates. | 5,107 | 14 March 2021 |
-| 21 | [horrorshow](https://github.com/Stebalien/horrorshow-rs) | a templating library written in rust macros | 3,331 | 21 March 2020 |
+| 2 | [handlebars](https://github.com/sunng87/handlebars-rust) | Handlebars templating implemented in Rust. | 507,564 | 03 May 2021 |
+| 3 | [tera](https://tera.netlify.com/) | Template engine based on Jinja2/Django templates | 277,708 | 21 April 2021 |
+| 4 | [askama](https://github.com/djc/askama) | Type-safe, compiled Jinja-like templates for Rust | 104,530 | 17 November 2020 |
+| 5 | [liquid](https://github.com/cobalt-org/liquid-rust) | The liquid templating language for Rust | 48,605 | 27 February 2021 |
+| 10 | [maud](https://maud.lambda.xyz/) | Compile-time HTML templates. | 13,293 | 09 January 2021 |
+| 13 | [ructe](https://github.com/kaj/ructe) | Rust Compiled Templates, efficient type-safe web page templates. | 5,079 | 14 March 2021 |
+| 22 | [horrorshow](https://github.com/Stebalien/horrorshow-rs) | a templating library written in rust macros | 3,346 | 21 March 2020 |
 | 29 | [markup](https://github.com/utkarshkukreti/markup.rs) | A blazing fast, type-safe template engine for Rust. | 2,200 | 28 March 2021 |
-| 33 | [sailfish](https://github.com/Kogia-sima/sailfish) | Simple, small, and extremely fast template engine for Rust | 1,687 | 06 April 2021 |
-| unranked | [fomat-macros](https://github.com/krdln/fomat-macros) | Alternative syntax for print/write/format-like macros with a small templating language | 43,513 | 24 February 2019 |
+| 31 | [sailfish](https://github.com/Kogia-sima/sailfish) | Simple, small, and extremely fast template engine for Rust | 1,931 | 06 April 2021 |
+| unranked | [fomat-macros](https://github.com/krdln/fomat-macros) | Alternative syntax for print/write/format-like macros with a small templating language | 43,573 | 24 February 2019 |
 | unranked | [write!](https://doc.rust-lang.org/std/macro.write.html) | the std library `write!` macro | a lot | 23 March 2021 |
 ## Results
 
-These results are from 26 April 2021 (rustc 1.51.0) on a GitHub Actions runner , which uses a Azure Standard_DS2_v2 virtual machine. 
+These results are from 03 May 2021 (rustc 1.51.0) on a GitHub Actions runner , which uses a Azure Standard_DS2_v2 virtual machine. 
 For more information about the hardware used checkout [Microsoft Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/dv2-dsv2-series#dsv2-series).
 Your mileage may vary.
 
@@ -33,33 +33,33 @@ Numbers, as output by Criterion:
 
 | Library | Lower bound | Estimate | Upper bound | Relative Performance |
 | ------- | ----------: | -------: | ----------: | :------------------- |
-| Sailfish | 50.758 us | 51.097 us | 51.479 us | 100.00% |
-| Markup | 93.028 us | 93.375 us | 93.771 us | 54.72% |
-| fomat | 323.20 us | 324.47 us | 325.85 us | 15.75% |
-| Maud | 379.92 us | 381.57 us | 383.53 us | 13.39% |
-| Horrorshow | 434.68 us | 437.25 us | 440.22 us | 11.69% |
-| write | 469.92 us | 471.94 us | 474.35 us | 10.83% |
-| Ructe | 580.97 us | 583.42 us | 586.53 us | 8.76% |
-| Askama | 689.28 us | 692.10 us | 695.10 us | 7.38% |
-| Tera | 2.5866 ms | 2.5998 ms | 2.6164 ms | 1.97% |
-| Handlebars | 6.0004 ms | 6.0288 ms | 6.0609 ms | 0.85% |
-| Liquid | 19.174 ms | 19.279 ms | 19.401 ms | 0.26% |
+| Sailfish | 51.436 us | 51.442 us | 51.448 us | 100.00% |
+| Markup | 88.977 us | 88.990 us | 89.004 us | 57.81% |
+| fomat | 321.92 us | 322.12 us | 322.33 us | 15.97% |
+| Maud | 351.24 us | 351.30 us | 351.36 us | 14.64% |
+| Horrorshow | 411.98 us | 412.15 us | 412.31 us | 12.48% |
+| write | 472.92 us | 472.98 us | 473.06 us | 10.88% |
+| Ructe | 513.35 us | 513.50 us | 513.63 us | 10.02% |
+| Askama | 652.21 us | 652.41 us | 652.72 us | 7.88% |
+| Tera | 2.3133 ms | 2.3135 ms | 2.3138 ms | 2.22% |
+| Handlebars | 5.3715 ms | 5.3736 ms | 5.3760 ms | 0.96% |
+| Liquid | 18.098 ms | 18.103 ms | 18.108 ms | 0.28% |
  
 ### Teams
 
 | Library | Lower bound | Estimate | Upper bound | Relative Performance |
 | ------- | ----------: | -------: | ----------: | :------------------- |
-| Sailfish | 85.671 ns | 86.198 ns | 86.777 ns | 100.00% |
-| Markup | 161.12 ns | 161.79 ns | 162.54 ns | 53.09% |
-| Maud | 375.33 ns | 377.76 ns | 380.45 ns | 22.75% |
-| fomat | 551.55 ns | 553.33 ns | 555.32 ns | 15.55% |
-| Horrorshow | 656.55 ns | 658.82 ns | 661.27 ns | 13.05% |
-| write | 817.87 ns | 823.96 ns | 830.94 ns | 10.44% |
-| Askama | 997.17 ns | 1.0025 us | 1.0090 us | 8.58% |
-| Ructe | 1.1011 us | 1.1112 us | 1.1236 us | 7.74% |
-| Handlebars | 6.3196 us | 6.3665 us | 6.4171 us | 1.35% |
-| Tera | 6.3912 us | 6.4172 us | 6.4470 us | 1.34% |
-| Liquid | 13.715 us | 13.770 us | 13.826 us | 0.62% |
+| Sailfish | 79.772 ns | 79.789 ns | 79.805 ns | 100.00% |
+| Markup | 163.66 ns | 164.05 ns | 164.62 ns | 48.78% |
+| Maud | 359.97 ns | 360.67 ns | 361.27 ns | 22.16% |
+| fomat | 480.57 ns | 480.62 ns | 480.69 ns | 16.63% |
+| Horrorshow | 617.60 ns | 617.80 ns | 618.01 ns | 12.94% |
+| write | 707.21 ns | 707.30 ns | 707.40 ns | 11.32% |
+| Askama | 920.76 ns | 920.89 ns | 921.05 ns | 8.69% |
+| Ructe | 1.0107 us | 1.0112 us | 1.0117 us | 7.91% |
+| Tera | 5.8941 us | 5.8981 us | 5.9025 us | 1.36% |
+| Handlebars | 6.1108 us | 6.1391 us | 6.1675 us | 1.30% |
+| Liquid | 12.567 us | 12.578 us | 12.590 us | 0.64% |
  
 ## Running the benchmarks
 
