@@ -5,20 +5,20 @@ download ratings from [crates.io](https://crates.io/categories/template-engine).
 
 | Rank | Library | Description | Recent Downloads | Last Updated |
 | :--- | :-----: | :---------- | ---------------: | :----------: |
-| 2 | [handlebars](https://github.com/sunng87/handlebars-rust) | Handlebars templating implemented in Rust. | 511,402 | 03 May 2021 |
-| 3 | [tera](https://tera.netlify.com/) | Template engine based on Jinja2/Django templates | 285,766 | 21 April 2021 |
-| 4 | [askama](https://github.com/djc/askama) | Type-safe, compiled Jinja-like templates for Rust | 108,740 | 17 November 2020 |
-| 5 | [liquid](https://github.com/cobalt-org/liquid-rust) | The liquid templating language for Rust | 47,872 | 27 February 2021 |
-| 10 | [maud](https://maud.lambda.xyz/) | Compile-time HTML templates. | 13,566 | 09 January 2021 |
-| 14 | [ructe](https://github.com/kaj/ructe) | Rust Compiled Templates, efficient type-safe web page templates. | 5,061 | 14 March 2021 |
-| 22 | [horrorshow](https://github.com/Stebalien/horrorshow-rs) | a templating library written in rust macros | 3,400 | 21 March 2020 |
-| 26 | [sailfish](https://github.com/Kogia-sima/sailfish) | Simple, small, and extremely fast template engine for Rust | 2,463 | 06 April 2021 |
-| 29 | [markup](https://github.com/utkarshkukreti/markup.rs) | A blazing fast, type-safe template engine for Rust. | 2,269 | 28 March 2021 |
-| unranked | [fomat-macros](https://github.com/krdln/fomat-macros) | Alternative syntax for print/write/format-like macros with a small templating language | 43,811 | 24 February 2019 |
-| unranked | [write!](https://doc.rust-lang.org/std/macro.write.html) | the std library `write!` macro | a lot | 03 May 2021 |
+| 2 | [handlebars](https://github.com/sunng87/handlebars-rust) | Handlebars templating implemented in Rust. | 518,382 | 03 May 2021 |
+| 3 | [tera](https://tera.netlify.com/) | Template engine based on Jinja2/Django templates | 297,548 | 16 May 2021 |
+| 4 | [askama](https://github.com/djc/askama) | Type-safe, compiled Jinja-like templates for Rust | 115,399 | 17 November 2020 |
+| 5 | [liquid](https://github.com/cobalt-org/liquid-rust) | The liquid templating language for Rust | 45,918 | 27 February 2021 |
+| 10 | [maud](https://maud.lambda.xyz/) | Compile-time HTML templates. | 13,404 | 09 January 2021 |
+| 16 | [ructe](https://github.com/kaj/ructe) | Rust Compiled Templates, efficient type-safe web page templates. | 4,678 | 14 March 2021 |
+| 22 | [horrorshow](https://github.com/Stebalien/horrorshow-rs) | a templating library written in rust macros | 3,284 | 21 March 2020 |
+| 25 | [sailfish](https://github.com/Kogia-sima/sailfish) | Simple, small, and extremely fast template engine for Rust | 2,723 | 06 April 2021 |
+| 32 | [markup](https://github.com/utkarshkukreti/markup.rs) | A blazing fast, type-safe template engine for Rust. | 1,851 | 15 May 2021 |
+| unranked | [fomat-macros](https://github.com/krdln/fomat-macros) | Alternative syntax for print/write/format-like macros with a small templating language | 43,244 | 24 February 2019 |
+| unranked | [write!](https://doc.rust-lang.org/std/macro.write.html) | the std library `write!` macro | a lot | 09 May 2021 |
 ## Results
 
-These results are from 10 May 2021 (rustc 1.52.0) on a GitHub Actions runner , which uses a Azure Standard_DS2_v2 virtual machine. 
+These results are from 17 May 2021 (rustc 1.52.1) on a GitHub Actions runner , which uses a Azure Standard_DS2_v2 virtual machine. 
 For more information about the hardware used checkout [Microsoft Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/dv2-dsv2-series#dsv2-series).
 Your mileage may vary.
 
@@ -33,33 +33,33 @@ Numbers, as output by Criterion:
 
 | Library | Lower bound | Estimate | Upper bound | Relative Performance |
 | ------- | ----------: | -------: | ----------: | :------------------- |
-| Sailfish | 49.684 us | 50.576 us | 51.725 us | 100.00% |
-| Markup | 207.39 us | 208.92 us | 210.53 us | 24.21% |
-| fomat | 318.13 us | 320.26 us | 322.58 us | 15.79% |
-| Maud | 349.90 us | 352.39 us | 355.10 us | 14.35% |
-| write | 430.02 us | 432.81 us | 435.70 us | 11.69% |
-| Horrorshow | 441.03 us | 444.08 us | 447.29 us | 11.39% |
-| Ructe | 522.37 us | 529.12 us | 536.69 us | 9.56% |
-| Askama | 687.03 us | 692.41 us | 699.36 us | 7.30% |
-| Tera | 2.4246 ms | 2.4498 ms | 2.4779 ms | 2.06% |
-| Handlebars | 5.1828 ms | 5.2125 ms | 5.2438 ms | 0.97% |
-| Liquid | 16.101 ms | 16.233 ms | 16.372 ms | 0.31% |
+| Sailfish | 45.915 us | 46.571 us | 47.217 us | 100.00% |
+| Markup | 205.85 us | 208.09 us | 210.19 us | 22.38% |
+| fomat | 291.87 us | 295.83 us | 299.68 us | 15.74% |
+| Maud | 351.81 us | 356.98 us | 362.33 us | 13.05% |
+| write | 432.32 us | 436.76 us | 441.05 us | 10.66% |
+| Horrorshow | 442.48 us | 447.65 us | 452.61 us | 10.40% |
+| Ructe | 499.19 us | 504.30 us | 509.04 us | 9.23% |
+| Askama | 602.18 us | 611.05 us | 619.61 us | 7.62% |
+| Tera | 2.3849 ms | 2.4153 ms | 2.4453 ms | 1.93% |
+| Handlebars | 5.1841 ms | 5.2513 ms | 5.3159 ms | 0.89% |
+| Liquid | 15.416 ms | 15.697 ms | 15.981 ms | 0.30% |
  
 ### Teams
 
 | Library | Lower bound | Estimate | Upper bound | Relative Performance |
 | ------- | ----------: | -------: | ----------: | :------------------- |
-| Sailfish | 83.878 ns | 84.634 ns | 85.418 ns | 100.00% |
-| Markup | 257.25 ns | 259.55 ns | 262.22 ns | 32.69% |
-| Maud | 337.20 ns | 341.47 ns | 346.72 ns | 24.93% |
-| fomat | 488.18 ns | 491.97 ns | 496.14 ns | 17.28% |
-| Horrorshow | 663.10 ns | 668.20 ns | 673.57 ns | 12.72% |
-| write | 785.16 ns | 791.83 ns | 799.23 ns | 10.73% |
-| Askama | 895.61 ns | 902.62 ns | 909.85 ns | 9.41% |
-| Ructe | 988.61 ns | 997.74 ns | 1.0077 us | 8.52% |
-| Tera | 6.0784 us | 6.1191 us | 6.1620 us | 1.39% |
-| Handlebars | 6.2754 us | 6.3535 us | 6.4319 us | 1.34% |
-| Liquid | 12.700 us | 12.821 us | 12.954 us | 0.66% |
+| Sailfish | 75.664 ns | 76.657 ns | 77.595 ns | 100.00% |
+| Markup | 259.21 ns | 262.32 ns | 265.43 ns | 29.39% |
+| Maud | 316.44 ns | 320.85 ns | 324.97 ns | 23.99% |
+| fomat | 483.19 ns | 489.51 ns | 496.21 ns | 15.71% |
+| Horrorshow | 639.40 ns | 646.31 ns | 652.89 ns | 11.92% |
+| write | 834.48 ns | 839.66 ns | 844.67 ns | 9.17% |
+| Ructe | 907.96 ns | 927.47 ns | 948.44 ns | 8.31% |
+| Askama | 920.31 ns | 930.34 ns | 942.31 ns | 8.28% |
+| Handlebars | 5.5162 us | 5.6244 us | 5.7325 us | 1.37% |
+| Tera | 6.2817 us | 6.3592 us | 6.4327 us | 1.21% |
+| Liquid | 12.325 us | 12.449 us | 12.566 us | 0.62% |
  
 ## Running the benchmarks
 
